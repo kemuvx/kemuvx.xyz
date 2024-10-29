@@ -1,3 +1,6 @@
+:root {
+    --android-nav-bar-color: #212121; /* Dark theme color */
+}
 * {
     margin: 0;
     padding: 0;
