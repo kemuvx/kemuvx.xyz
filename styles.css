@@ -16,21 +16,15 @@ body {
         #ff00ff 25px,
         #00ffff 50px
     );
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px, 0 50px, 50px 0;
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
-}
-.container {
-    text-align: center;
-    background-color: #1b1b1b;
-    padding: 20px 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: white;
-    animation: spin 2s linear infinite;
+    animation: spin 4s linear infinite;
 }
 
 @keyframes spin {
@@ -39,6 +33,25 @@ body {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+.container {
+    text-align: center;
+    background-color: #1b1b1b;
+    padding: 20px 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    animation: shake 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
     }
 }
 
@@ -94,3 +107,4 @@ a:hover {
     color: #ffffff;
     text-decoration: underline;
 }
+
