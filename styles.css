@@ -1,5 +1,5 @@
 :root {
-    --android-nav-bar-color: #212121; /* Dark theme color */
+    --android-nav-bar-color: #ff00ff; /* Dark theme color */
 }
 * {
     margin: 0;
@@ -8,35 +8,86 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #141E30, #243B55);
-    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: repeating-linear-gradient(
+        45deg,
+        #ff00ff 0,
+        #00ffff 25px,
+        #ff00ff 25px,
+        #00ffff 50px
+    );
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 .container {
     text-align: center;
     background-color: #1b1b1b;
     padding: 20px 40px;
-    border-radius: 8px;
+    border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 h1 {
     font-size: 2.5rem;
     letter-spacing: 0.4rem;
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-25px);
+    }
 }
 
 p {
     margin-top: 10px;
     font-size: 1rem;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 a {
     color: #888;
     text-decoration: none;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff00ff;
+    }
 }
 
 a:hover {
